@@ -194,11 +194,11 @@ def calculate_mean_std(**kwargs):
     # mean_r, mean_g, mean_b = [np.round(mean, 4) for mean in means]
     # std_r, std_g, std_b = [np.round(std, 4) for std in stds]
 
-    mean_r, mean_g, mean_b = (0.5285, 0.4667, 0.4108)
-    std_r, std_g, std_b = (0.2243, 0.2312, 0.2345)
+    # mean_r, mean_g, mean_b = (0.5285, 0.4667, 0.4108)
+    # std_r, std_g, std_b = (0.2243, 0.2312, 0.2345)
 
-    # mean_r, mean_g, mean_b = (130.7403, 115.4837, 101.348)
-    # std_r, std_g, std_b = (56.0456, 57.9080, 58.5345)
+    mean_r, mean_g, mean_b = (134.7772, 119.0160, 104.7547)
+    std_r, std_g, std_b = (57.1974, 59.1315, 59.8035)
 
     return [mean_r, mean_g, mean_b], [std_r, std_g, std_b]
 
@@ -274,7 +274,7 @@ def train(model, train_loader, test_loader, **kwargs):
             # Save the best model
             if test_loss[-1] < best_loss:
                 best_loss = test_loss[-1]
-                torch.save(model.state_dict(), 'model4.pt')
+                torch.save(model, 'model4.pt')
                 print(f'Best model saved with test loss: {best_loss:.4f}')
 
 
