@@ -274,7 +274,7 @@ def train(model, train_loader, test_loader, **kwargs):
             # Save the best model
             if test_loss[-1] < best_loss:
                 best_loss = test_loss[-1]
-                torch.save(model, 'model4.pt')
+                torch.save(model.state_dict(), 'model.pt')
                 print(f'Best model saved with test loss: {best_loss:.4f}')
 
 
